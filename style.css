@@ -22,8 +22,10 @@
     box-sizing: border-box;
 }
 body{
+    height: 100vh;
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
     background-color: var(--primary-cream);
 }
@@ -34,14 +36,15 @@ main{
     overflow: hidden;
     height: fit-content;
 }
-
-main .perfume{
+main .perfumeM{
     width: 100%;
     object-fit: cover;
 }
+main .perfumeD{
+    display: none;
+}
 .main{
     padding: 1.5rem;
-    display: grid;
 }
 header{
     display: grid;
@@ -92,11 +95,96 @@ header p{
     padding: .8rem;
     border-radius: 10px;
 }
-.btn img, .btn p{
+.btn .shop, .btn p{
     display: inline-block;
     color: var(--secondary-white);
     font-family:var(--ff-montserrat);
     font-weight: var(--fw-700);
 }
-.attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
+
+@media screen and (min-width: 500px){
+    body{
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+    }
+    main{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 50%;
+        max-height: 70%;
+        margin: 0;
+        padding: 0;
+    }
+    figure .perfumeM{
+        display: none;
+    }
+    figure .perfumeD{
+        display: block;
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+    }
+    figure{
+        grid-column: 1/1;
+    } 
+    .main{
+        grid-column: 2/-1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 1.5rem;
+    }
+
+    header h1{
+        font-family: var(--ff-frances);
+        font-size: 3.2rem;
+    }
+    header h2{
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
+    }
+    header p{
+        font-size: 1.2rem;
+    }
+    .prices{
+        margin: .8rem 0;
+    }
+    .new{
+        font-size: 2rem;
+        color: var(--primary-dark-cyan);
+        margin-right: .8rem;
+    }
+    .btn{
+        padding: 1.2rem;
+    }
+    .btn .shop{
+        width: 5%;
+        height: auto;
+    }
+    .btn p{
+        margin-left: .4rem;
+        font-size: 1.2rem;
+    }
+    .attribution{
+        font-size: 1.2rem;
+        padding: 0;
+    }
+}
+
+
+.attribution {
+    position: absolute;
+    bottom: 1rem;
+    left: 0;
+    right: 0;
+    font-size: 14px;
+    text-align: center;
+    padding: 0 1rem;
+    line-height: 1.5;
+    color: var(--secondary-dark-blue);
+    font-weight: 600;
+}
+.attribution a {
+    color: var(--primary-dark-cyan);
+}
