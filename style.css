@@ -156,7 +156,11 @@ header p{
         margin-right: .8rem;
     }
     .btn{
+        cursor: pointer;
         padding: 1.2rem;
+    }
+    .btn:hover{
+        background-color: var(--secondary-dark-blue);
     }
     .btn .shop{
         width: 5%;
