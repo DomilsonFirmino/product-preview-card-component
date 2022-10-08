@@ -15,6 +15,8 @@
     --fw-700: 700;
 
     --fs-paragraph: 14px;
+
+    --space: 1.5vw;
 }
 *,*::after,*::before{
     margin: 0;
@@ -24,158 +26,147 @@
 body{
     height: 100vh;
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     background-color: var(--primary-cream);
 }
 main{
     margin: 1rem;
-    background-color: var(--secondary-white);
-    border-radius: 10px;
     overflow: hidden;
-    height: fit-content;
-}
-main .perfumeM{
-    width: 100%;
-    object-fit: cover;
-}
-main .perfumeD{
-    display: none;
-}
-.main{
-    padding: 1.5rem;
-}
-header{
-    display: grid;
-}
-header h1{
-    font-family: var(--ff-frances);
-    font-size: 2rem;
-    line-height: 110%;
-}
-header h2{
-    order: -1;
-    font-size: 14px;
-    font-family: var(--ff-montserrat);
-    text-transform: uppercase;
-    font-weight: var(--fw-400);
-    color: var(--secondary-dark-grayish-blue);
-    letter-spacing: 3px;
-    margin-bottom: 1rem;
-}
-header p{
-    margin: 1.5rem 0;
-    font-family:var(--ff-montserrat);
-    font-size: 14px;
-    font-weight: var(--fw-400);
-    letter-spacing: 1px;
-    color: var(--secondary-dark-grayish-blue);
-}
-.prices{
-    display: flex;
-}
-.price{
-    display: inline-block;
-}
-.new{
-    font-family: var(--ff-frances);
-    font-size: 1.8rem;
-    color: var(--primary-dark-cyan);
-    margin-right: .8rem;
-}
-.old{
-    color: var(--secondary-dark-grayish-blue);
-    align-self: center;
-}
-.btn{
-    background-color: var(--primary-dark-cyan);
-    text-align: center;
-    margin-top: 1.5rem;
-    padding: .8rem;
     border-radius: 10px;
+    background-color: var(--secondary-white);
 }
-.btn .shop, .btn p{
-    display: inline-block;
-    color: var(--secondary-white);
-    font-family:var(--ff-montserrat);
-    font-weight: var(--fw-700);
+picture .mobile{
+    width: 100%;
+    object-fit: contain;
 }
 
-@media screen and (min-width: 500px){
-    body{
-        height: 100vh;
-        justify-content: center;
-        align-items: center;
-    }
+.card{
+    padding: 1rem;
+}
+.card__title{
+    
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+    font-weight: var(--fw-400);   
+    font-family: var(--ff-montserrat);
+    color:var(--secondary-dark-grayish-blue);
+}
+
+.card__subtitle{
+
+    font-size: 2.1rem;
+    margin-bottom: 1rem;
+    line-height: 1.05;
+    font-weight: var(--fw-700);
+    font-family: var(--ff-frances);
+    
+}
+
+.card__body{
+    margin-bottom: 1rem;
+
+    font-size: 1rem;
+    font-weight: var(--fw-400);
+    font-family: var(--ff-montserrat);
+    color: var(--secondary-dark-grayish-blue);
+}
+.price{
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: var(--fw-700);
+    font-family: var(--ff-frances);
+    color: var(--primary-dark-cyan);
+    position: relative;
+}
+.price__old{
+    position: absolute;
+    top: 15%;
+    font-size: 1.1rem;
+    margin-left: 1rem;
+    font-weight: var(--fw-400);
+    font-family: var(--ff-montserrat);
+    color: var(--secondary-dark-grayish-blue);
+}
+
+button{
+    
+    width: 100%;
+    border: none;
+    padding: 1rem;
+    display: block;
+    border-radius: 10px;
+
+    font-size: 1.1rem;
+    font-weight: var(--fw-700);
+    color: var(--secondary-white);
+    font-family: var(--ff-montserrat);
+    background-color:var(--primary-dark-cyan);
+
+}
+button a{
+    text-decoration: none;
+    color: inherit;
+}
+.shop{
+    margin-right: .5rem;
+}
+/*Media queries*/
+@media only screen and (min-width: 475px){
     main{
+        width: min(40vw,60vw);
+        height: fit-content;
+
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        max-width: 50%;
-        max-height: 70%;
-        margin: 0;
-        padding: 0;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: 1fr;
     }
-    figure .perfumeM{
-        display: none;
-    }
-    figure .perfumeD{
-        display: block;
-        object-fit: cover;
-        height: 100%;
+    picture{
         width: 100%;
+        height: 100%;
     }
-    figure{
-        grid-column: 1/1;
-    } 
-    .main{
-        grid-column: 2/-1;
+    picture .mobile{
+        width: 100%;
+        height: 100%;
+        display: inline-block;
+        object-fit: cover;
+    }
+    .card{
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding: 1.5rem;
     }
-
-    header h1{
-        font-family: var(--ff-frances);
-        font-size: 3.2rem;
+    .card__title{
+        font-size: 1.1vw;
+        margin-bottom: var(--space);
     }
-    header h2{
-        font-size: 1.2rem;
-        margin-bottom: 1.5rem;
+    .card__subtitle{
+        font-size: 2.5vw;
+        margin-bottom: var(--space);
     }
-    header p{
-        font-size: 1.2rem;
+    .card__body{
+        font-size: 1vw;
+        margin-bottom: var(--space);
     }
-    .prices{
-        margin: .8rem 0;
+    .price{
+        font-size: 2vw;
+        margin-bottom: var(--space);
     }
-    .new{
-        font-size: 2rem;
-        color: var(--primary-dark-cyan);
-        margin-right: .8rem;
+    .price__old{
+        font-size: 1.1vw;
     }
-    .btn{
+    button{
+        padding: .8vw;
         cursor: pointer;
-        padding: 1.2rem;
     }
-    .btn:hover{
+    button:hover{
         background-color: var(--secondary-dark-blue);
-    }
-    .btn .shop{
-        width: 5%;
-        height: auto;
-    }
-    .btn p{
-        margin-left: .4rem;
-        font-size: 1.2rem;
-    }
-    .attribution{
-        font-size: 1.2rem;
-        padding: 0;
     }
 }
 
+/*END OF MEDIA QUERIES*/
 
 .attribution {
     position: absolute;
@@ -188,6 +179,7 @@ header p{
     line-height: 1.5;
     color: var(--secondary-dark-blue);
     font-weight: 600;
+    display: none;
 }
 .attribution a {
     color: var(--primary-dark-cyan);

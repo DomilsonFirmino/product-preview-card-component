@@ -11,39 +11,34 @@
 </head>
 <body>
 
-  <main>
-    <figure>
-      <img class="perfumeM" src="images/image-product-mobile.jpg" alt="Preview"> 
-      <img class="perfumeD"src="images/image-product-desktop.jpg" alt="preview">
-    </figure>
+  <main class="container">
+    <picture>
+      <source class="desktop" srcset="images/image-product-desktop.jpg" media="(min-width: 475px)" alt="Preview"> 
+      <img class="mobile" src="images/image-product-mobile.jpg" alt="preview">
+    </picture>
 
-    <div class="main">
+    <div class="card">
       <header>
-        <h1>Gabrielle Essence Eau De Parfum</h1>
-        <h2>perfume</h2>
-  
-        <p>
+        <h1 class="card__title">perfume</h1>
+        <h2 class="card__subtitle">Gabrielle Essence Eau De Parfum</h2>
+        
+        <p class="card__body">
           A floral, solar and voluptuous interpretation composed by Olivier Polge, 
           Perfumer-Creator for the House of CHANEL.
         </p>
       </header>
   
-      <div class="prices">
-        <p class="price new">$149.99</p>
-        <p class="price old"><s>$169.99</s></p>
-      </div>
+      <p class="price">$149.99<span class="price__old"><s>$169.99</s></span></p>
   
-      <div class="btn">
-        <img class="shop" alt="shop icon"src="images/icon-cart.svg">
-        <p>Add to Cart</p>
-      </div>
+      <button>
+        <img class="shop" alt="shop icon"src="images/icon-cart.svg"><a href="#">Add to Cart</a>
+      </button>
     </div>
-  
   </main>
 
-  <div class="attribution">
+  <footer class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="https://github.com/DomilsonFirmino">Domilson Firmino</a>.
-  </div>
+  </footer>
 </body>
 </html>
